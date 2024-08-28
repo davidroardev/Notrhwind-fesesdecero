@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthWind</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a NorthWind</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#login">login</a></li>
+            <li><a href="#register">Registro</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="login">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Ingresar</button>
+                <p id="loginMessage"></p>
+
+            </form>
+        </section>
+
+        <section id="login">
+            <h2>Registro</h2>
+            <form id="egisterForm">
+                <label for="new_username">Usuario:</label>
+                <input type="text" id="new_username" name="new_username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="new_password">Contraseña</label>
+                <input type="password" id="new_password" name="new_password" required>
+
+                <button type="submit">Crear Cuenta</button>
+                <p id="loginMessage"></p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>&copy; 2024 Northwind todos los derechos reservados</footer>
+</body>
+</html>
