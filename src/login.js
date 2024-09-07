@@ -1,6 +1,8 @@
 window.onload = () =>{
     const loginForm =document.getElementById('loginForm');
     const loginMessage = document.getElementById('loginMessage');
+    const registerForm = document.getElementById('registerForm');
+    const registerMessage = document.getElementById('registerMessage')
 
     loginForm.addEventListener('submit', async function(event){
 
@@ -32,6 +34,41 @@ window.onload = () =>{
             console.log(error)
             loginMessage.textContent = 'Hubo un error en la peticion. Error en el login';
             loginMessage.style.color= 'red';
+        }
+
+    });
+
+    registerForm.addEventListener('submit', async function(event) {
+
+        event.preventDefault(); // Prevenir que se envie el formulario de forma tradicional
+
+        const newUserName = document.getElementById('new_username').value;
+        const newPassword = document.getElementById('new_password').value;
+        const newEmail = document.getElementById('email').value;
+        
+        try {
+            const response = await fetch('http://localhost:3000/user/register',{
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify({userName: newUserName, password: newPassword, email:newEmail}), // estos espacios reciben las variables que utiliza el endpoint por ende deben ser iguales a las variables en la api
+            });
+
+            const data = await response.json();
+            console.log(data);
+
+            if(response.ok){
+                registerMessage.textContent = 'Registro Exitoso';
+                registerMessage.style.color= 'green';
+            }else{
+                registerMessage.textContent = data.message || 'Error en el Registro';
+                registerMessage.style.color= 'red';
+            }
+        } catch (error) {
+            console.log(error)
+            registerMessage.textContent = 'Hubo un error en la peticion. Error en el ';
+            registerMessage.style.color= 'red';
         }
 
     })
