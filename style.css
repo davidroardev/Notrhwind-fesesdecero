@@ -38,6 +38,10 @@ nav ul li{
 
 }
 
+.close_session{
+    margin-left: 200px;
+}
+
 nav ul li a{
     color: #fff;
     text-decoration: none;

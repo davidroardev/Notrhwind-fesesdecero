@@ -22,10 +22,13 @@ window.onload = () =>{
 
             const data = await response.json();
             console.log(data);
+            const encodeData = btoa(JSON.stringify(data));
+            console.log(encodeData)
 
             if(response.ok){
                 loginMessage.textContent = 'Login Exitoso';
                 loginMessage.style.color= 'green';
+                window.location.href = `/dashboard.html#${encodeData}`;
             }else{
                 loginMessage.textContent = data.message || 'Error en el login';
                 loginMessage.style.color= 'red';
@@ -67,7 +70,7 @@ window.onload = () =>{
             }
         } catch (error) {
             console.log(error)
-            registerMessage.textContent = 'Hubo un error en la peticion. Error en el ';
+            registerMessage.textContent = 'Hubo un error en la peticion. Error en el registro';
             registerMessage.style.color= 'red';
         }
 
