@@ -28,7 +28,7 @@ window.onload = () =>{
             if(response.ok){
                 loginMessage.textContent = 'Login Exitoso';
                 loginMessage.style.color= 'green';
-                window.location.href = `/dashboard.html#${encodeData}`;
+                window.location.href = `../paginas/dashboard.html#${encodeData}`;
             }else{
                 loginMessage.textContent = data.message || 'Error en el login';
                 loginMessage.style.color= 'red';
