@@ -1,4 +1,5 @@
 window.onload = () =>{
+    const apiUrl = "https://nodeproject-funcional.vercel.app"
     const loginForm =document.getElementById('loginForm');
     const loginMessage = document.getElementById('loginMessage');
     const registerForm = document.getElementById('registerForm');
@@ -12,7 +13,7 @@ window.onload = () =>{
         const password = document.getElementById('password').value;
 
         try {
-            const response = await fetch('http://localhost:3000/api/login',{
+            const response = await fetch(`${apiUrl}/api/login`,{
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json'
@@ -50,7 +51,7 @@ window.onload = () =>{
         const newEmail = document.getElementById('email').value;
         
         try {
-            const response = await fetch('http://localhost:3000/user/register',{
+            const response = await fetch(`${apiUrl}/user/register`,{
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json'

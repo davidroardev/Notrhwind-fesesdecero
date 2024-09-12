@@ -1,4 +1,7 @@
 window.onload = (event) =>{
+
+    const apiUrl = "https://nodeproject-funcional.vercel.app"
+
     const  categoriesForm = document.getElementById('categoriesForm');
 
     categoriesForm.addEventListener('submit', async function(event) {
@@ -9,7 +12,7 @@ window.onload = (event) =>{
         const categoryDescription = document.getElementById('description').value;
 
         try {
-            const response = await fetch ('http://localhost:3000/createCategories',{
+            const response = await fetch (`${apiUrl}/createCategories`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

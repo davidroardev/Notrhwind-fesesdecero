@@ -15,6 +15,9 @@ window.onload = async () =>{
     });
 
 };
+
+const apiUrl = "https://nodeproject-funcional.vercel.app"
+
 function getQueryParams(param){
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
@@ -22,7 +25,7 @@ function getQueryParams(param){
 
 async function loadCategory(id){
     try {
-        const response = await fetch (`http://localhost:3000/getCategoriesById/${id}`,{
+        const response = await fetch (`${apiUr}/getCategoriesById/${id}`,{
             method:'GET',
             headers:{
                 'Content-Type':'application/json'
@@ -38,7 +41,7 @@ async function loadCategory(id){
 
 async function updateCategory(id, name, description){
     try {
-        const response = await fetch (`http://localhost:3000/updateCategories/${id}`,{
+        const response = await fetch (`${apiUr}/updateCategories/${id}`,{
             method:'PUT',
             headers:{
                 'Content-Type':'application/json'
