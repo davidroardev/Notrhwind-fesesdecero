@@ -41,7 +41,7 @@ async function loadCategory(id){
 
 async function updateCategory(id, name, description){
     try {
-        const response = await fetch (`${apiUr}/updateCategories/${id}`,{
+        const response = await fetch (`https://nodeproject-funcional.vercel.app/updateCategories/${id}`,{
             method:'PUT',
             headers:{
                 'Content-Type':'application/json'
