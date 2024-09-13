@@ -25,7 +25,7 @@ function getQueryParams(param){
 
 async function loadCategory(id){
     try {
-        const response = await fetch (`${apiUr}/getCategoriesById/${id}`,{
+        const response = await fetch (`${apiUrl}/getCategoriesById/${id}`,{
             method:'GET',
             headers:{
                 'Content-Type':'application/json'
