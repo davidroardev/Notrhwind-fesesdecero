@@ -73,7 +73,7 @@ async function loadCategories() {
 
 async function  deleteCategory(id){
     try {
-        const response = await fetch (`${apiUrl}deleteCategories/${id}`,{
+        const response = await fetch (`${apiUrl}/deleteCategories/${id}`,{
             method:'DELETE',
             headers:{
                 'Content-Type':'application/json'
